@@ -1,0 +1,8 @@
+little try of doing my first finite autoamata (DFA) after jvasquez's talk about them, here on 42madrid
+this one accepts strings that may have leading/trailing zeroes and sequences of numbers that end and start with '1'
+examples:
+"   100001"
+"  101 111 111111000101 1001   "
+etc
+
+try if yourself!
