@@ -1,5 +1,6 @@
 little try of doing my first finite automata (DFA) after jvasquez's talk about them, here on 42madrid
 this one accepts strings that may have leading/trailing zeroes and sequences of numbers that end and start with '1'
+the accepted disctionar is {' ', '1', '0'}
 examples:
 "   100001"
 "  101 111 111111000101 1001   "
