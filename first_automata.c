@@ -19,18 +19,19 @@
 
 /*
 * set (array) of all states
-* 1st -> initia state
-* al error states at the beginning, so we can set that 
+* 1st -> initial state
+* all error states at the beginning, so we can set that 
 *		error < #finalstate
 * final(s) state at the end of the array
 * 
 * this automata will only accept strings that:
-* 	starts & ends with 1
-* 	has leading spaces, but none at the end
+* 	have leading/trailing spaces
+* 	have sequence of numbers with '0' & '1'
+*	those sequences always start/end with '1'
 */
 size_t	t_states[][4] =
 {
-	//\s 1 0  ^		// dict " 10"
+	//\s 1 0  ^	// dict {' ', '1', '0'}
 	{0, 3, 2, 1},	// 0 INIT
 	{1, 1, 1, 1},	// 1 ERROR
 	{0, 3, 2, 1},	// 2 '0' found
@@ -54,7 +55,7 @@ int		check_fstates(size_t state)
 //initialize automata
 char	*automata(char *c)
 {
-	char 		*dict = " 10"; //allowed ascii: {space, 1, 0}, input symbols
+	char 		*dict = " 10"; //input symbols: {' ', '1', '0'}
 	size_t 		len = strlen(c);
 	size_t		state = 0; //INIT state
 
